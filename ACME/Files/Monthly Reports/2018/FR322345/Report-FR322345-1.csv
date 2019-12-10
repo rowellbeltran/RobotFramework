@@ -1,0 +1,5 @@
+InvoiceNumber,Item,Amount,Tax,Total,Currency,Date
+331377,"Various paper supplies",90741,18148.2,108889,EUR,2017-01-02
+805188,"Waste management services",31594,6318.8,37912.8,RON,2017-01-11
+209965,"IT Support",194259,38851.8,233111,EUR,2017-01-04
+493182,"Waste management services",123469,24693.8,148163,EUR,2017-01-07
