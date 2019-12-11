@@ -20,7 +20,7 @@ All Open Work Items Retrieved
     #Create Data File
     Append To File    ./Files/${item type} Work Items.csv    WIID,Type, Status
     ${page count}=    Get Element Count    //ul[@class='page-numbers']/li
-    ${page count}=    EvaluateNone    ${page count}+1
+    ${page count}=    Evaluate    ${page count}+1
     : FOR    ${page index}    IN RANGE    1    ${page count}
     \    log    ${page index}
     \    Run Keyword If    '${page index}' == '3'    Continue For Loop    #prev page button element added

@@ -16,9 +16,3 @@ Process Open WI4 Work Items
     When All Open Work Items Processed    WI4
     Then Items Should Be Completed    WI4
     [Teardown]    Close Browser
-
-test
-    [Setup]    Log Into ACME    ${ACME URL}    chrome    ${ACME_USER}    ${ACME PASSWORD_ENCRYPTED}
-    Then Items Should Be Completed    WI4
-    Log    test
-    [Teardown]    Close Browser

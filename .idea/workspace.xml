@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ac2e8d51-2334-4d14-876f-440c2324317b" name="Default Changelist" comment="" />
+    <list default="true" id="ac2e8d51-2334-4d14-876f-440c2324317b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ACME/Gherkin Keywords.robot" beforeDir="false" afterPath="$PROJECT_DIR$/ACME/Gherkin Keywords.robot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ACME/Process WI4.robot" beforeDir="false" afterPath="$PROJECT_DIR$/ACME/Process WI4.robot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Common/.idea/Common.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Common/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Common/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Common/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Common/.idea/workspace.xml" beforeDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +57,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
