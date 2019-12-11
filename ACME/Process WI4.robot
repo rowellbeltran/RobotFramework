@@ -6,6 +6,7 @@ Resource          Keywords.robot
 Resource          Work_Items.robot
 Resource          Templates.robot
 Resource          Gherkin Keywords.robot
+Resource          Templates.robot
 
 *** Test Cases ***
 Process Open WI4 Work Items

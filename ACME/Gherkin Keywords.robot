@@ -56,3 +56,18 @@ Items Should Be Completed
     \    ${reprocess flag}=    Set Variable If    '${passed}' == 'False'    True
     Run Keyword If    '${reprocess flag}' == 'False'    Remove File    ./Files/${item type} Work Items.csv
     Move Files    ${DIR_PROCESSED}/${item type} Work Items.csv    ${DIR_VERIFIED}/    #move file to Verified Folder
+
+Work Item Is Found
+    [Arguments]    ${wiid}
+    Navigate To Work Items
+    Navigate To Work Item Details    ${wiid}
+
+Monthly Reports Are Downloaded and Yearly Report Generated
+    ${tax id}=    Get Vendor Tax ID
+    Get Report Year
+    Download Monthly Reports    ${tax id}
+    Generate Yearly Report    ${tax id}
+
+Upload Yearly Report And Close Work Item
+    ${upload id}=    Upload Yearly Report    ${tax id}
+    Update Work Item Status    ${wiid}    Completed    Upload ID: ${upload id}

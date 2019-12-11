@@ -5,7 +5,7 @@ Library           Collections
 Resource          Work_Items.robot
 Resource          Variables.robot
 Library           OperatingSystem
-Library           ../../AppData/Local/Programs/Python/Python37-32/Lib/site-packages/ExcelLibrary.py
+Library           ExcelLibrary
 Library           CSVLib
 Library           String
 Library           DateTime
