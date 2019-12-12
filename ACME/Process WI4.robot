@@ -15,4 +15,8 @@ Process Open WI4 Work Items
     Given All Open Work Items Retrieved    WI4
     When All Open Work Items Processed    WI4
     Then Items Should Be Completed    WI4
+<<<<<<< HEAD
     [Teardown]    Close Browser
+=======
+    [Teardown]    Close Browser
+>>>>>>> 1226d6fd0ee941cdf86993dbbf79c9e012a8db01
