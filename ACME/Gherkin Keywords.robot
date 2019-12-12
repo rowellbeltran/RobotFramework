@@ -37,7 +37,7 @@ All Open Work Items Processed
     \    Continue For Loop If    '${item[0]}' == 'WIID'
     \    Run Keyword And Continue On Failure    Process ${item type} Work Item    ${item[0]}
     \    Comment    Return From Keyword if    '${item[0]}' == '345634'    #test
-    Move File    ${DIR_ACME FILES}/${item type} Work Items.csv    ${DIR_PROCESSED}    #move file to Processed Folder
+    Move File    ${DIR_ACME FILES}/${item type} Work Items.csv    ${DIR_PROCESSED}/    #move file to Processed Folder
 
 Items Should Be Completed
     [Arguments]    ${item type}
@@ -50,10 +50,11 @@ Items Should Be Completed
     \    Continue For Loop If    '${item[0]}' == 'WIID'
     \    ${passed}=    Run Keyword And Return Status    Check ${item type} Work Item    ${item[0]}
     \    #Failed for reprocessing
-    \    Run Keyword If    '${passed}' == 'False'    Run Keywords    Append To File    ${DIR_ACME FILES}/${item type} Work Items.csv    \n${item[0]},${item[1]},${item[2]}
-    \    ...    SYSTEM
+    \    Run Keyword If    '${passed}' == 'False'
+    \    ...    Run Keywords
+    \    ...    Append To File    ${DIR_ACME FILES}/${item type} Work Items.csv    \n${item[0]},${item[1]},${item[2]}    SYSTEM
     \    ...    AND    Log    Item sent for reprocessing: ${item}    WARN
-    \    ${reprocess flag}=    Set Variable If    '${passed}' == 'False'    True
+    \    ...    AND    ${reprocess flag}=    Set Variable    True
     Run Keyword If    '${reprocess flag}' == 'False'    Remove File    ${DIR_ACME FILES}/${item type} Work Items.csv
     Move Files    ${DIR_PROCESSED}/${item type} Work Items.csv    ${DIR_VERIFIED}/    #move file to Verified Folder
 
