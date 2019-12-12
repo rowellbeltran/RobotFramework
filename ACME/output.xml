@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.1.2 (Python 3.7.5 on win32)" generated="20191211 14:44:52.679" rpa="false">
+<suite id="s1" name="Process WI4" source="C:\Users\rowel\PycharmProjects\RobotFramework\acme\Process WI4.robot">
+<test id="s1-t1" name="Process Open WI4 Work Items">
+<kw name="Log Into ACME" library="Keywords" type="setup">
+<arguments>
+<arg>${ACME URL}</arg>
+<arg>chrome</arg>
+<arg>${ACME_USER}</arg>
+<arg>${ACME PASSWORD_ENCRYPTED}</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Logging into ACME</arg>
+</arguments>
+<msg timestamp="20191211 14:44:55.634" level="INFO">Logging into ACME</msg>
+<status status="PASS" starttime="20191211 14:44:55.634" endtime="20191211 14:44:55.634"></status>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+</arguments>
+<msg timestamp="20191211 14:44:55.634" level="INFO">Opening browser 'chrome' to base url 'https://acme-test.uipath.com/'.</msg>
+<status status="PASS" starttime="20191211 14:44:55.634" endtime="20191211 14:45:05.526"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20191211 14:45:05.527" endtime="20191211 14:45:09.837"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>xpath=//div/h1[@class='page-header']</arg>
+</arguments>
+<status status="PASS" starttime="20191211 14:45:09.838" endtime="20191211 14:45:09.925"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=email</arg>
+<arg>${user}</arg>
+</arguments>
+<msg timestamp="20191211 14:45:09.926" level="INFO">Typing text 'rowellbeltran@gmail.com' into text field 'id=email'.</msg>
+<status status="PASS" starttime="20191211 14:45:09.926" endtime="20191211 14:45:10.372"></status>
+</kw>
+<kw name="Set Log Level" library="BuiltIn">
+<doc>Sets the log threshold to the specified level and returns the old level.</doc>
+<arguments>
+<arg>NONE</arg>
+</arguments>
+<status status="PASS" starttime="20191211 14:45:10.372" endtime="20191211 14:45:10.373"></status>
+</kw>
+<kw name="Decrypt Password" library="Utilities">
+<arguments>
+<arg>${password_enc}</arg>
+</arguments>
+<assign>
+<var>${password}</var>
+</assign>
+<kw name="Decode" library="decrypt">
+<arguments>
+<arg>${enc}</arg>
+</arguments>
+<assign>
+<var>${dec}</var>
+</assign>
+<status status="PASS" starttime="20191211 14:45:10.375" endtime="20191211 14:45:10.377"></status>
+</kw>
+<status status="PASS" starttime="20191211 14:45:10.374" endtime="20191211 14:45:10.378"></status>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=password</arg>
+<arg>${password}</arg>
+</arguments>
+<status status="PASS" starttime="20191211 14:45:10.379" endtime="20191211 14:45:10.647"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>id=buttonLogin</arg>
+</arguments>
+<status status="PASS" starttime="20191211 14:45:10.648" endtime="20191211 14:45:10.848"></status>
+</kw>
+<kw name="Set Log Level" library="BuiltIn">
+<doc>Sets the log threshold to the specified level and returns the old level.</doc>
+<arguments>
+<arg>INFO</arg>
+</arguments>
+<msg timestamp="20191211 14:45:10.850" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20191211 14:45:10.848" endtime="20191211 14:45:10.850"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>xpath=//div[@class='main-container']/h1</arg>
+</arguments>
+<status status="PASS" starttime="20191211 14:45:10.851" endtime="20191211 14:45:12.327"></status>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//div[@class='main-container']/h1</arg>
+</arguments>
+<assign>
+<var>${header}</var>
+</assign>
+<msg timestamp="20191211 14:45:12.377" level="INFO">${header} = Welcome, rowellbeltran@gmail.com to System 1.</msg>
+<status status="PASS" starttime="20191211 14:45:12.327" endtime="20191211 14:45:12.377"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${header}</arg>
+<arg>Welcome, ${ACME_user} to System 1.</arg>
+</arguments>
+<status status="PASS" starttime="20191211 14:45:12.377" endtime="20191211 14:45:12.377"></status>
+</kw>
+<status status="PASS" starttime="20191211 14:44:55.634" endtime="20191211 14:45:12.377"></status>
+</kw>
+<kw name="Given All Open Work Items Retrieved" library="Gherkin Keywords">
+<doc>Gets all open work item type and save in a file.</doc>
+<arguments>
+<arg>WI4</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Collecting All Open ${item type} Work Items</arg>
+</arguments>
+<msg timestamp="20191211 14:45:12.377" level="INFO">Collecting All Open WI4 Work Items</msg>
+<status status="PASS" starttime="20191211 14:45:12.377" endtime="20191211 14:45:12.377"></status>
+</kw>
+<kw name="File Should Not Exist" library="OperatingSystem">
+<doc>Fails if the given path points to an existing file.</doc>
+<arguments>
+<arg>./Files/${item type} Work Items.csv</arg>
+</arguments>
+<msg timestamp="20191211 14:45:12.392" level="INFO" html="yes">File '&lt;a href="file://C:\Users\rowel\PycharmProjects\RobotFramework\acme\Files\WI4 Work Items.csv"&gt;C:\Users\rowel\PycharmProjects\RobotFramework\acme\Files\WI4 Work Items.csv&lt;/a&gt;' does not exist.</msg>
+<status status="PASS" starttime="20191211 14:45:12.377" endtime="20191211 14:45:12.392"></status>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<doc>Appends the given content to the specified file.</doc>
+<arguments>
+<arg>./Files/${item type} Work Items.csv</arg>
+<arg>WIID,Type, Status</arg>
+</arguments>
+<msg timestamp="20191211 14:45:12.392" level="INFO" html="yes">Appended to file '&lt;a href="file://C:\Users\rowel\PycharmProjects\RobotFramework\acme\Files\WI4 Work Items.csv"&gt;C:\Users\rowel\PycharmProjects\RobotFramework\acme\Files\WI4 Work Items.csv&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20191211 14:45:12.392" endtime="20191211 14:45:12.392"></status>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns the number of elements matching ``locator``.</doc>
+<arguments>
+<arg>//ul[@class='page-numbers']/li</arg>
+</arguments>
+<assign>
+<var>${page count}</var>
+</assign>
+<msg timestamp="20191211 14:45:12.424" level="INFO">${page count} = 0</msg>
+<status status="PASS" starttime="20191211 14:45:12.392" endtime="20191211 14:45:12.424"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${page count}+1</arg>
+</arguments>
+<assign>
+<var>${page count}</var>
+</assign>
+<msg timestamp="20191211 14:45:12.424" level="INFO">${page count} = 1</msg>
+<status status="PASS" starttime="20191211 14:45:12.424" endtime="20191211 14:45:12.424"></status>
+</kw>
+<kw name="${page index} IN RANGE [ 1 | ${page count} ]" type="for">
+<status status="PASS" starttime="20191211 14:45:12.424" endtime="20191211 14:45:12.424"></status>
+</kw>
+<status status="PASS" starttime="20191211 14:45:12.377" endtime="20191211 14:45:12.424"></status>
+</kw>
+<kw name="When All Open Work Items Processed" library="Gherkin Keywords">
+<doc>Process the work items listed in the file and move it to Processed folder.</doc>
+<arguments>
+<arg>WI4</arg>
+</arguments>
+<kw name="Read Csv As List" library="CSVLib">
+<arguments>
+<arg>./Files/${item type} Work Items.csv</arg>
+<arg>,</arg>
+</arguments>
+<assign>
+<var>@{work items}</var>
+</assign>
+<msg timestamp="20191211 14:45:12.439" level="INFO">@{work items} = [ ['WIID', 'Type', ' Status'] ]</msg>
+<status status="PASS" starttime="20191211 14:45:12.424" endtime="20191211 14:45:12.439"></status>
+</kw>
+<kw name="${item} IN [ @{work items} ]" type="for">
+<kw name="${item} = ['WIID', 'Type', ' Status']" type="foritem">
+<kw name="Continue For Loop If" library="BuiltIn">
+<doc>Skips the current for loop iteration if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${item[0]}' == 'WIID'</arg>
+</arguments>
+<msg timestamp="20191211 14:45:12.439" level="INFO">Continuing for loop from the next iteration.</msg>
+<status status="PASS" starttime="20191211 14:45:12.439" endtime="20191211 14:45:12.439"></status>
+</kw>
+<status status="PASS" starttime="20191211 14:45:12.439" endtime="20191211 14:45:12.439"></status>
+</kw>
+<status status="PASS" starttime="20191211 14:45:12.439" endtime="20191211 14:45:12.439"></status>
+</kw>
+<kw name="Move Files" library="OperatingSystem">
+<doc>Moves specified files to the target directory.</doc>
+<arguments>
+<arg>./Files/${item type} Work Items.csv</arg>
+<arg>${DIR_PROCESSED}/${item type} Work Items.csv</arg>
+</arguments>
+<msg timestamp="20191211 14:45:12.643" level="INFO" html="yes">Moved file from '&lt;a href="file://C:\Users\rowel\PycharmProjects\RobotFramework\acme\Files\WI4 Work Items.csv"&gt;C:\Users\rowel\PycharmProjects\RobotFramework\acme\Files\WI4 Work Items.csv&lt;/a&gt;' to '&lt;a href="file://C:\Users\rowel\PycharmProjects\RobotFramework\acme\Files\Processed\WI4 Work Items.csv\WI4 Work Items.csv"&gt;C:\Users\rowel\PycharmProjects\RobotFramework\acme\Files\Processed\WI4 Work Items.csv\WI4 Work Items.csv&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20191211 14:45:12.439" endtime="20191211 14:45:12.644"></status>
+</kw>
+<status status="PASS" starttime="20191211 14:45:12.424" endtime="20191211 14:45:12.645"></status>
+</kw>
+<kw name="Then Items Should Be Completed" library="Gherkin Keywords">
+<doc>Check that the work items in the files were all processed successfully. Moves the file to Verified. Any failed work items will be added to a file fore reprocessing.</doc>
+<arguments>
+<arg>WI4</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Checking All Processed ${item type} Work Items</arg>
+</arguments>
+<msg timestamp="20191211 14:45:12.654" level="INFO">Checking All Processed WI4 Work Items</msg>
+<status status="PASS" starttime="20191211 14:45:12.653" endtime="20191211 14:45:12.655"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>False</arg>
+</arguments>
+<assign>
+<var>${reprocess flag}</var>
+</assign>
+<msg timestamp="20191211 14:45:12.657" level="INFO">${reprocess flag} = False</msg>
+<status status="PASS" starttime="20191211 14:45:12.656" endtime="20191211 14:45:12.657"></status>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<doc>Appends the given content to the specified file.</doc>
+<arguments>
+<arg>./Files/${item type} Work Items.csv</arg>
+<arg>WIID,Type,Status</arg>
+<arg>SYSTEM</arg>
+</arguments>
+<msg timestamp="20191211 14:45:12.666" level="INFO" html="yes">Appended to file '&lt;a href="file://C:\Users\rowel\PycharmProjects\RobotFramework\acme\Files\WI4 Work Items.csv"&gt;C:\Users\rowel\PycharmProjects\RobotFramework\acme\Files\WI4 Work Items.csv&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20191211 14:45:12.658" endtime="20191211 14:45:12.666"></status>
+</kw>
+<kw name="Read Csv As List" library="CSVLib">
+<arguments>
+<arg>${DIR_PROCESSED}/${item type} Work Items.csv</arg>
+<arg>,</arg>
+</arguments>
+<assign>
+<var>@{work items}</var>
+</assign>
+<msg timestamp="20191211 14:45:12.671" level="FAIL">PermissionError: [Errno 13] Permission denied: './Files/Processed/WI4 Work Items.csv'</msg>
+<status status="FAIL" starttime="20191211 14:45:12.667" endtime="20191211 14:45:12.672"></status>
+</kw>
+<status status="FAIL" starttime="20191211 14:45:12.649" endtime="20191211 14:45:12.672"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="teardown">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20191211 14:45:12.674" endtime="20191211 14:45:15.484"></status>
+</kw>
+<doc>To Process WI4 Work Items (Generate Yearly Report).</doc>
+<status status="FAIL" starttime="20191211 14:44:55.634" endtime="20191211 14:45:15.484" critical="yes">PermissionError: [Errno 13] Permission denied: './Files/Processed/WI4 Work Items.csv'</status>
+</test>
+<status status="FAIL" starttime="20191211 14:44:52.694" endtime="20191211 14:45:15.484"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1">Critical Tests</stat>
+<stat pass="0" fail="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" id="s1" name="Process WI4">Process WI4</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20191211 14:44:55.596" level="WARN">Error in file 'C:\Users\rowel\PycharmProjects\RobotFramework\acme\Gherkin Keywords.robot': Escaping empty cells with '\' before line continuation marker '...' is deprecated. Remove escaping before Robot Framework 3.2.</msg>
+<msg timestamp="20191211 14:44:55.596" level="WARN">Error in file 'C:\Users\rowel\PycharmProjects\RobotFramework\acme\Gherkin Keywords.robot': Escaping empty cells with '\' before line continuation marker '...' is deprecated. Remove escaping before Robot Framework 3.2.</msg>
+<msg timestamp="20191211 14:44:55.596" level="WARN">Error in file 'C:\Users\rowel\PycharmProjects\RobotFramework\acme\Gherkin Keywords.robot': Escaping empty cells with '\' before line continuation marker '...' is deprecated. Remove escaping before Robot Framework 3.2.</msg>
+</errors>
+</robot>

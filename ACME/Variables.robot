@@ -5,8 +5,9 @@ ${ACME_USER}      rowellbeltran@gmail.com
 @{MONTHS}         January    February    March    April    May    June    July
 ...               August    September    October    November    December
 ${REPORT YEAR}    ${EMPTY}
-${DIR_MONTHLY REPORTS}    ./Files/Monthly Reports
-${DIR_YEARLY REPORTS}    ./Files/Yearly Reports
+${DIR_MONTHLY REPORTS}    c:/ACME Files/Monthly Reports
+${DIR_YEARLY REPORTS}    c:/ACME Files/Yearly Reports
 @{CONSOLIDATED REPORT}
-${DIR_PROCESSED}    ./Files/Processed
-${DIR_VERIFIED}    ./Files/Verified
+${DIR_PROCESSED}    c:/ACME Files/Processed
+${DIR_VERIFIED}    c:/ACME Files/Verified
+${DIR_ACME FILES}    c:/ACME Files

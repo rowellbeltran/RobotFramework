@@ -39,14 +39,13 @@ Navigate To Work Items
 Get Open Items Per Page
     [Arguments]    ${item type}
     Log    Collecting All Open ${item type} Work Items Per Page
-    Navigate To Work Items
     ${page row count}=    Get Element Count    xpath=//div[@class='panel panel-default']/table/tbody/tr
     : FOR    ${page row count}    IN RANGE    2    ${page row count}
     \    ${wiid}=    get text    xpath=//div[@class='panel panel-default']/table/tbody/tr[${page row count}]/td[2]
     \    ${type}=    get text    xpath=//div[@class='panel panel-default']/table/tbody/tr[${page row count}]/td[4]
     \    ${status}=    get text    xpath=//div[@class='panel panel-default']/table/tbody/tr[${page row count}]/td[5]
     \    ${item}=    Set Variable    ${wiid},${type},${status}
-    \    Run Keyword If    '${type}' == '${item type}' and '${Status}' == 'Open'    Append To File    ./Files/${item type} Work Items.csv    \n${item}    SYSTEM
+    \    Run Keyword If    '${type}' == '${item type}' and '${Status}' == 'Open'    Append To File    c:/ACME Files/${item type} Work Items.csv    \n${item}    SYSTEM
 
 Navigate To Work Item Details
     [Arguments]    ${wiid}
@@ -130,7 +129,7 @@ Upload Yearly Report
     Input Text    id=vendorTaxID    ${tax id}
     Click Element    xpath=//div[@class='controls']/label[contains(text(),'Year')]/following-sibling::div
     Click Element    xpath=//a/span[contains(text(),'${REPORT YEAR}')]    #Select Year
-    Choose File    id=my-file-selector    C:/Users/%{USERNAME}/RF Projects/ACME/Files/Yearly Reports/${REPORT YEAR}/Yearly-Report-${REPORT YEAR}-${tax id}.xlsx
+    Choose File    id=my-file-selector    ${DIR_YEARLY REPORTS}/${REPORT YEAR}/Yearly-Report-${REPORT YEAR}-${tax id}.xlsx
     Click Element    id=buttonUpload
     #Get Alert Message
     ${alert}=    Handle Alert
