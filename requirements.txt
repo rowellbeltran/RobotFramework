@@ -14,5 +14,5 @@ robotframework-seleniumlibrary==4.1.0
 robotframeworklexer==1.1
 selenium==3.141.0
 six==1.13.0
-urllib3==1.25.7
+urllib3==1.26.5
 wxPython==4.0.7.post2
