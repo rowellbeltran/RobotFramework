@@ -5,7 +5,7 @@ openpyxl==3.0.2
 Pillow==6.2.1
 Pygments==2.5.2
 PyPubSub==3.3.0
-pywin32==227
+pywin32==301
 robotframework==3.1.2
 robotframework-csvlib==1.0.0
 robotframework-excellib==2.0.0
