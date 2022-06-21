@@ -1,6 +1,6 @@
 et-xmlfile==1.0.1
 jdcal==1.4.1
-numpy==1.17.4
+numpy==1.22.0
 openpyxl==3.0.2
 Pillow==6.2.1
 Pygments==2.5.2
